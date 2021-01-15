@@ -10,14 +10,13 @@
 #   https://dev.mysql.com/doc/refman/5.7/en/password-hashing.html
 #
 default: &default
-  adapter: mysql2
-  encoding: utf8mb4
+  adapter:  postgresql
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  
+
   # ==========ここから変更する==========
-  username: <%= ENV['MYSQL_USER'] %>
-  password: <%= ENV['MYSQL_PASSWORD'] %>
-  host: <%= ENV['MYSQL_HOST'] %>
+  username: <%= ENV['POSTGRESQL_USER'] %>
+  password: <%= ENV['POSTGRESQL_PASSWORD'] %>
+  host: <%= ENV['POSTGRESQL_HOST'] %>
   # ==========ここまで変更する==========
 
 development:
